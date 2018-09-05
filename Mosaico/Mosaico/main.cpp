@@ -13,10 +13,8 @@
 #include <GLUT/glut.h>
 
 void init(void) {
-    //glClearColor(0.988, 0.984, 0.976, 1.0);
     glClearColor(1.0,1.0,1.0,1.0);
     glMatrixMode(GL_PROJECTION);
-    //gluOrtho2D(-1,1,-1,1);
     gluOrtho2D(0, 101, 0, 101);
 }
 
@@ -31,12 +29,14 @@ void circulo(float radio, float x, float y, float R, float G, float B, float sta
     start_angle = toRad(start_angle);
     end_angle = toRad(end_angle);
     
-    glColor3f(R, G, B);
+    glColor3ub(R, G, B);
     
     glBegin(GL_LINE_STRIP);
-    for(double theta = start_angle; theta < end_angle; theta += M_PI/1000){
+    for(double theta = start_angle; theta < end_angle; theta += M_PI/6000){
         glVertex2f(x + cos(theta)*radio, y + sin(theta)*radio);
     }
+    
+    glColor3ub(207, 81, 108);
     
     glEnd();
 }
@@ -49,21 +49,24 @@ void mosaico(void) {
     float r;
     
     //grosor de línea
-    glLineWidth(3.0);
+    glLineWidth(10.0);
     
     glEnable(GL_LINE_STIPPLE);
     
     //glLineStipple(2, 0x00FF);
-    glLineStipple(3, 0xFFFF);
+    glLineStipple(3, 0xBBBB);
 
     float start_1,start_2,start_3,start_4;
     float end_1,end_2,end_3,end_4;
     float R, G, B;
     
     //negro (?)
-    R = 0.251;
-    G = 0.267;
-    B = 0.235;
+    R = 64;
+    G = 68;
+    B = 60;
+//    R = 87;
+//    G = 89;
+//    B = 84;
 
     start_1 = 308;
     end_1 = 322;
@@ -100,9 +103,9 @@ void mosaico(void) {
     }
     
     //beige (3/1)
-    R = 0.949;
-    G = 0.937;
-    B = 0.91;
+    R = 242;
+    G = 239;
+    B = 232;
 
     start_1 = 305;
     end_1 = 325;
@@ -111,8 +114,8 @@ void mosaico(void) {
     end_3 = 145;
 
     for(r = 67; r<= 69; r++){
-        circulo(r, 0, 101, R, G, B,start_1,end_1);
-        circulo(r, 101, 0, R, G, B, start_3, end_3);
+        circulo(r, 0, 101, 115, 81, 207,start_1,end_1);
+        circulo(r, 101, 0, 150, 125, 219, start_3, end_3);
 
         start_1 += 0.5;
         end_1 -= 0.5;
@@ -128,8 +131,8 @@ void mosaico(void) {
     end_4 = 48;
 
     for(r = 61; r <= 63; r ++){
-        circulo(r, 101, 101, R, G, B, start_2, end_2);
-        circulo(r, 0, 0, R, G, B, start_4, end_4);
+        circulo(r, 101, 101, 133, 103, 213, start_2, end_2);
+        circulo(r, 0, 0, 168, 146, 225, start_4, end_4);
 
         start_2 += 0.3;
         end_2 -= 0.5;
@@ -138,7 +141,7 @@ void mosaico(void) {
         end_4 -= 0.5;
     }
     
-    //naranja (4/2)
+    //azul (4/2)
     R = 0.776;
     G = 0.478;
     B = 0.184;
@@ -150,8 +153,8 @@ void mosaico(void) {
     end_3 = 148;
 
     for(r = 63; r<= 66; r++){
-        circulo(r, 0, 101, R, G, B,start_1,end_1);
-        circulo(r, 101, 0, R, G, B, start_3, end_3);
+        circulo(r, 0, 101, 173, 207, 81,start_1,end_1);
+        circulo(r, 101, 0, 194, 219, 125, start_3, end_3);
 
         start_1+=0.6;
         end_1-=0.5;
@@ -167,8 +170,8 @@ void mosaico(void) {
     end_4 = 51.5;
 
     for(r = 59; r <= 60; r ++){
-        circulo(r, 101, 101, R, G, B, start_2, end_2);
-        circulo(r, 0, 0, R, G, B, start_4, end_4);
+        circulo(r, 101, 101, 183, 213, 103, start_2, end_2);
+        circulo(r, 0, 0, 204, 225, 146, start_4, end_4);
 
         start_2+=0.7;
         end_2-=1.2;
@@ -185,8 +188,8 @@ void mosaico(void) {
     end_3 = 154;
 
     for(r = 58; r<= 62; r++){
-        circulo(r, 0, 101, 0.702,0.302,0.302,start_1,end_1);
-        circulo(r, 101, 0, 0.702, 0.302, 0.302, start_3, end_3);
+        circulo(r, 0, 101, 207, 81, 110, start_1, end_1);
+        circulo(r, 101, 0, 219, 125, 146, start_3, end_3);
 
         start_1+=0.6;
         end_1-=0.7;
@@ -202,8 +205,8 @@ void mosaico(void) {
     end_4 = 57;
 
     for(r = 56; r <= 58; r ++){
-        circulo(r, 101, 101, 0.702,0.302,0.302, start_2, end_2);
-        circulo(r, 0 , 0, 0.702, 0.302, 0.302, start_4, end_4);
+        circulo(r, 101, 101, 213, 103, 128, start_2, end_2);
+        circulo(r, 0 , 0, 225, 146, 164, start_4, end_4);
 
         start_2+=0.6;
         end_2-=1;
@@ -213,7 +216,7 @@ void mosaico(void) {
     }
     
     
-    //verde (6/4)
+    //azul (6/4)
     start_1 = 282;
     end_1 = 348;
     
@@ -227,8 +230,8 @@ void mosaico(void) {
     end_4 = 67;
    
     for(r = 52; r <= 57; r++){
-        circulo(r, 0, 101, 0.714,0.808,0.525,start_1,end_1);
-        circulo(r,101, 0,0.714,0.808,0.525, start_3, end_3);
+        circulo(r, 0, 101, 81, 173, 207,start_1,end_1);
+        circulo(r,101, 0, 125, 194, 219, start_3, end_3);
         
         start_1+=1.5;
         end_1-=1.5;
@@ -238,8 +241,8 @@ void mosaico(void) {
     }
     
     for(r = 52; r <= 55; r++){
-        circulo(r, 101, 101, 0.714,0.808,0.525,start_2,end_2);
-        circulo(r, 0 , 0,0.714,0.808,0.525,start_4, end_4);
+        circulo(r, 101, 101, 103, 183, 213, start_2, end_2);
+        circulo(r, 0 , 0, 146, 204, 225,start_4, end_4);
         
         start_2+=1;
         end_2-=2.5;
@@ -251,26 +254,36 @@ void mosaico(void) {
 
     
     //negro
-    for(r = 51; r >= 50; r -= 0.1 ){
-        circulo(r, 0, 101, 0.251,0.267,0.235, 272.5, 357.5);
-        circulo(r, 101, 101, 0.251,0.267,0.235, 182.5, 267.5);
-        circulo(r, 101, 0, 0.251,0.267,0.235, 92.5, 177.5);
-        circulo(r, 0, 0, 0.251,0.267,0.235, 2.5, 87.5);
+    R = 64;
+    G = 68;
+    B = 60;
+    
+    for(r = 51; r >= 50; r -- ){
+        circulo(r, 0, 101, R, G, B, 272.5, 357.5);
+        circulo(r, 101, 101, R, G, B, 182.5, 267.5);
+        circulo(r, 101, 0, R, G, B, 92.5, 177.5);
+        circulo(r, 0, 0, R, G, B, 2.5, 87.5);
     }
     
-    glLineStipple(3, 0xFFFF);
+    glLineStipple(3, 0xAAAA);
+    glLineWidth(2.0);
+    
+    R = 242;
+    G = 239;
+    B = 232;
     
     // beige externo
-    for(r = 49.6; r>= 1; r -= 0.1){
-        circulo(r, 0, 101, 0.949,0.937,0.91, 272.5, 357.5);
-        circulo(r, 101, 101, 0.949,0.937,0.91, 182.5, 267.5);
-        circulo(r, 101, 0, 0.949,0.937,0.91, 92.5, 177.5);
-        circulo(r, 0, 0, 0.949,0.937,0.91, 2.5, 87.5);
+    for(r = 49.6; r>= 1; r -= 0.4){
+        circulo(r, 0, 101, R, G ,B, 272.5, 357.5);
+        circulo(r, 101, 101, R , G, B, 182.5, 267.5);
+        circulo(r, 101, 0, R, G, B, 92.5, 177.5);
+        circulo(r, 0, 0, R, G, B, 2.5, 87.5);
     }
     
     //--------------------------------------------------------------- CIRCULOS(?) EXTERIORES -----------------------------------------------------------------------------------------------------------------------------
 
     glLineStipple(3, 0xBBBB);
+    glLineWidth(4.0);
     
     start_1 = 285;
     end_1 = 345;
@@ -284,16 +297,17 @@ void mosaico(void) {
     start_4 = 15;
     end_4 = 75;
     
-    for(r = 27; r >= 0; r -= 0.5){
-        circulo(r, 10, 91, 0.702,0.302,0.302, 270, 360);
-        circulo(r, 91, 91, 0.702,0.302,0.302, 180, 270);
-        circulo(r, 91, 10, 0.702, 0.302,0.302, 90, 180);
-        circulo(r, 10, 10, 0.702,0.302,0.302, 0, 90);
+    for(r = 27; r >= 0; r -= 0.7){
+        circulo(r, 10, 91, 207, 115, 81, 270, 360);
+        circulo(r, 91, 91, 207, 115, 81, 180, 270);
+        circulo(r, 91, 10, 207, 115, 81, 90, 180);
+        circulo(r, 10, 10, 207, 115, 81, 0, 90);
     }
 
     
     
     glDisable(GL_LINE_STIPPLE);
+    
     //--------------------------------------------------------------- MARCO -----------------------------------------------------------------------------------------------------------------------------
 
     glColor3f(0.251,0.267,0.235);
