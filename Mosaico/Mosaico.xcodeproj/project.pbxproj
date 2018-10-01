@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4246D376213DBC130013F67C /* Prueba.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4246D374213DBC130013F67C /* Prueba.cpp */; };
 		42BE42712138A206004897A9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42BE42702138A206004897A9 /* main.cpp */; };
 		42BE42792138A28F004897A9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42BE42782138A28F004897A9 /* OpenGL.framework */; };
 		42BE427B2138A295004897A9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42BE427A2138A295004897A9 /* GLUT.framework */; };
@@ -26,7 +25,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4246D374213DBC130013F67C /* Prueba.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Prueba.cpp; sourceTree = "<group>"; };
 		42BE426D2138A206004897A9 /* Mosaico */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Mosaico; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BE42702138A206004897A9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		42BE42782138A28F004897A9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -67,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				42BE42702138A206004897A9 /* main.cpp */,
-				4246D374213DBC130013F67C /* Prueba.cpp */,
 			);
 			path = Mosaico;
 			sourceTree = "<group>";
@@ -137,7 +134,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4246D376213DBC130013F67C /* Prueba.cpp in Sources */,
 				42BE42712138A206004897A9 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
